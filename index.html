@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-100">
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-md container max-w-md">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Book Your Tickets</h2>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                    <select id="category" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="movie">Movie</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="timing" class="block text-sm font-medium text-gray-700">Timing</label>
+                    <select id="timing" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        <option value="" disabled selected>Select Timing</option>
+                        <option value="10am">10:00 AM</option>
+                        <option value="12pm">12:00 PM</option>
+                        <option value="1pm">01:00 PM</option>
+                        <option value="3pm">03:00 PM</option>
+                        <option value="6pm">06:00 PM</option>
+                        <option value="8pm">08:00 PM</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="availableSeat" class="block text-sm font-medium text-gray-700">Available Seat</label>
+                    <select id="availableSeat" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        <option value="" disabled selected>Select Available Seat</option>
+                        <option value="1A">1A</option>
+                        <option value="1B">1B</option>
+                        <option value="1C">1C</option>
+                        <option value="2A">2A</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter name" required>
+                </div>
+                <div>
+                    <label for="bookingDate" class="block text-sm font-medium text-gray-700">Booking Date</label>
+                    <input type="date" id="bookingDate" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors">Book Now</button>
+                </div>
+            </form>
+            <div id="bookingDetails" class="hidden mt-4 text-gray-700">
+                <h3 class="text-xl font-semibold">Booking Details:</h3>
+                <p id="categoryDisplay"></p>
+                <p id="timingDisplay"></p>
+                <p id="availableSeatDisplay"></p>
+                <p id="nameDisplay"></p>
+                <p id="bookingDateDisplay"></p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
